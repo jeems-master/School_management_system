@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    id        = "kmrs.mobile.app"
+    versionCode = "10"
+    version   = "1.3.6">
+    <name>Rango</name>
+    <description>
+        O cardapio mais famoso da zona oeste carioca.
+    </description>
+    <author email="anacarlapontesfeldens@gmail.com" href="https://rangodobairro.com.br">
+        Carla Feldens
+    </author>
+    <icon src="icon.png" />           
+    <content src="index.html" />
+               
+	<preference name="orientation" value="portrait" />
+	<preference name="android-build-tool" value="gradle" />	
+		
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" spec="1.5.3" />
+    <gap:plugin name="com.paypal.cordova.mobilesdk" source="npm"  />            	
+    <gap:plugin name="cordova-plugin-device" source="npm" />		
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" />		
+	<gap:plugin name="cordova-plugin-splashscreen" source="npm" />	
+	<gap:plugin name="cordova-plugin-geolocation" source="npm" />
+	<gap:plugin name="cordova-plugin-network-information" source="npm" />
+		
+	<gap:plugin name="cordova-plugin-request-location-accuracy" source="npm" />	
+	<gap:plugin name="cordova-plugin-x-toast" source="npm" />	
+
+	<gap:plugin name="cordova-plugin-fastrde-checkgps" source="npm" />
+	<gap:plugin spec="https://github.com/rodrigo-martinezd/cordova-dialog-gps.git" source="git" />
+	
+	<gap:plugin spec="https://github.com/razorpay/razorpay-cordova.git" source="git" />
+	<gap:plugin name="cordova-plugin-media" source="npm" />	
+	<gap:plugin name="cordova.plugins.diagnostic" source="npm" />	
+	
+	<gap:plugin name="cordova-plugin-googlemaps"  source="npm" >
+	   <param name="API_KEY_FOR_ANDROID" value="XXX" />
+	   <param name="API_KEY_FOR_IOS" value="XXX" />
+	</gap:plugin>
+	
+	<gap:splash src="splash.png" />
+	<preference name="AutoHideSplashScreen" value="false" />  	
+    <preference name="SplashScreenDelay" value="10000" />    
+    <preference name="fullscreen" value="false" />
+    <preference name="android-minSdkVersion" value="16" />     
+	
+    <access origin="*" />
+    <access origin="tel:*" launch-external="yes" />
+       
+    <gap:config-file platform="android" parent="/manifest">
+        <supports-screens android:xlargeScreens="true" android:largeScreens="true" android:smallScreens="true" />
+        <application android:theme="@android:style/Theme.NoTitleBar" >            
+        </application>        
+    </gap:config-file>    
+    
+</widget>
