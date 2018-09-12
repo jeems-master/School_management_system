@@ -30,30 +30,30 @@
                      <h4 style='color:red;'>{{$errors->first()}}</h4>
                   @endif
 
-                  <center>Por favor, preencha os dados corretamente.
+                  <center>Please, fill in the information correctly.
                   <br/>
                   <?php
                     if(isset($loginError)){
-                        ?><h4 style='color:red;'>Código inválido!</h4><?php
+                        ?><h4 style='color:red;'>Invalid code!</h4><?php
                     }
                   ?>
                 </center><br/>
                 <?php if(isset($success)){ ?>
 
-                     <h4 style='color:green;'>Código atualizado!</h4>
+                     <h4 style='color:green;'>Code updated!</h4>
 
                 <?php }else{ ?>
                   <div class="form-group">
-                      <input type="text" name="email" class="form-control" placeholder="Usuário ou email"/>
+                      <input type="text" name="email" class="form-control" placeholder="User or Email"/>
                   </div>
                   <div class="form-group">
-                      <input type="password" name="password" class="form-control" placeholder="Senha"/>
+                      <input type="password" name="password" class="form-control" placeholder="Password"/>
                   </div>
                   <div class="form-group">
-                      <input type="text" name="cpc" class="form-control" placeholder="Código"/>
+                      <input type="text" name="cpc" class="form-control" placeholder="Code"/>
                   </div>
                   <input type="hidden" name="nextStep" value="1">
-                  <button type="submit" class="btn bg-olive btn-block">Instalar agora</button>
+                  <button type="submit" class="btn bg-olive btn-block">Install now</button>
                 <?php } ?>
               </div>
               <div class="footer">

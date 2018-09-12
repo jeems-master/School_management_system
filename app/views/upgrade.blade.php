@@ -31,36 +31,36 @@
                   @endif
 
                   @if($currStep == "welcome")
-                      <center>Koceno - Sistema de Gestão Inteligente.
+                      <center>Koceno - Intelligent Management System.
                       <br/>
                       <?php
                         if(isset($loginError)){
-                            ?><h4 style='color:red;'>Código de ativação inválido</h4><?php
+                            ?><h4 style='color:red;'>Invalid activation code</h4><?php
                         }
                       ?>
-                      Por favor, faça login como administrador para fazer esta atualização!</center>
+                      Please log in as an administrator to do this update!</center>
                       <div class="form-group">
-                          <input type="text" name="email" class="form-control" placeholder="Usuário ou email"/>
+                          <input type="text" name="email" class="form-control" placeholder="User or Email"/>
                       </div>
                       <div class="form-group">
-                          <input type="password" name="password" class="form-control" placeholder="Senha"/>
+                          <input type="password" name="password" class="form-control" placeholder="Password"/>
                       </div>
                       <div class="form-group">
-                          <input type="text" name="cpc" class="form-control" placeholder="Código de ativação"/>
+                          <input type="text" name="cpc" class="form-control" placeholder="Activation code"/>
                       </div>
                       <input type="hidden" name="nextStep" value="1">
-                      <button type="submit" class="btn bg-olive btn-block">Iniciar atualização</button>
+                      <button type="submit" class="btn bg-olive btn-block">Start update</button>
                   @endif
                   @if($currStep == "1")
                       <div class="form-group">
-                          <center><b>Teste de permissão de pastas</b></center>
+                          <center><b>Permission Testing for Folders</b></center>
                       </div>
 
                       <div class="form-group" style="color:green;">
                           <?php
                               if(isset($success)){
                                   while (list($key, $value) = each($success)) {
-                                      echo $value.": <b>Sucesso</b> <br/>";
+                                      echo $value.": <b>Success</b> <br/>";
                                   }
                               }
                           ?>
@@ -69,39 +69,39 @@
                           <?php
                               if(isset($perrors)){
                                   while (list($key, $value) = each($perrors)) {
-                                      echo $value.": <b>Falhou</b> <br/>";
+                                      echo $value.": <b>Failed</b> <br/>";
                                   }
                               }
                           ?>
                       </div>
                       @if($nextStep == "1")
                           <input type="hidden" name="nextStep" value="1">
-                          <button type="submit" class="btn bg-olive btn-block">Tentar novamente</button>
+                          <button type="submit" class="btn bg-olive btn-block">Try again</button>
                       @endif
                       @if($nextStep == "2")
                           <input type="hidden" name="nextStep" value="2">
-                          <button type="submit" class="btn bg-olive btn-block">Próximo</button>
+                          <button type="submit" class="btn bg-olive btn-block">Next</button>
                       @endif
                   @endif
 
                   @if($currStep == "2")
                       <div class="form-group">
-                          <center><b>Atualizar banco de dados</b></center>
+                          <center><b>Update database</b></center>
                       </div>
 
                       <div class="form-group">
-                          <center><b>Banco de dados atualizado com sucesso!</b></center>
+                          <center><b>Database updated successfully!</b></center>
                       </div>
 
                       <input type="hidden" name="nextStep" value="3">
-                      <button type="submit" class="btn bg-olive btn-block">Próximo</button>
+                      <button type="submit" class="btn bg-olive btn-block">Next</button>
                   @endif
 
                   @if($currStep == "3")
                       <div class="form-group">
                           <center><b>Sistema atualizado!</b></center>
                       </div>
-                      <a href="<?php echo URL::to('/'); ?>" class="btn bg-olive btn-block">Fazer login</a>
+                      <a href="<?php echo URL::to('/'); ?>" class="btn bg-olive btn-block">Do login</a>
                   @endif
               </div>
               <div class="footer">

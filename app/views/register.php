@@ -112,7 +112,7 @@
                       <div class="row">
                           <label for="inputPassword3" class="col-sm-6"><?php echo $panelInit->language['studentDetails']; ?></label>
                           <div class="col-sm-6">
-                              <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Vincular estudante</a>
+                              <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Link Student</a>
                           </div>
                       </div>
                       <div class="row" ng-repeat="studentOne in form.studentInfo track by $index" style="padding-top:5px;">
@@ -129,7 +129,7 @@
               </section>
               <section class="content" ng-show="views.thanks">
                   <center><?php echo $panelInit->language['thankReg']; ?><br/></center>
-                  <center>Por favor AGUARDE!</center>
+                  <center>Please Wait!</center>
               </section>
           </form>
         </div><!-- /.login-box-body -->
@@ -153,7 +153,7 @@
                       <td>{{studentOne.name}}</td>
                       <td>{{studentOne.email}}</td>
                       <td class="no-print">
-                       <a type="button" ng-click="linkStudentFinish(studentOne)" class="btn btn-success btn-flat">Vincular</a>
+                       <a type="button" ng-click="linkStudentFinish(studentOne)" class="btn btn-success btn-flat">Link</a>
                       </td>
                   </tr>
                 </tbody></table>
