@@ -72,9 +72,9 @@ class DashboardInit {
 									),
 
 									"transportations"=>array("title"=>"Transportation","url"=>URL::to('#/transports'),"icon"=>"fa fa-bus","activated"=>"transportAct","cusPerm"=>"Transportation","permissions"=>array('admin','teacher','student','parent') ),
-									
+
 									"classes"=>array("title"=>"classes","url"=>URL::to('#/classes'),"icon"=>"fa fa-sitemap","activated"=>"eventsAct","cusPerm"=>"classes","permissions"=>array('admin') ),
-									
+
 									//"classes"=>array("title"=>"classes","icon"=>"fa fa-sitemap","cusPerm"=>"classes","permissions"=>array('admin'),
 									//					"children"=>array(
 									//						"classes"=>array("title"=>"classes","url"=>URL::to('#/classes'),"icon"=>"fa fa-sitemap","permissions"=>array('admin') ),
@@ -103,7 +103,11 @@ class DashboardInit {
 					);
 
 		$settings = settings::get();
-		$this->settingsArray = settingsArrayPrep($settings);
+        $items = array();
+        foreach($settings as $setting){
+            $items[$setting->fieldName] = $setting->fieldValue;
+        }
+		$this->settingsArray = $items;
 
 		$staticPages = static_pages::where('pageActive','1')->get();
 		foreach ($staticPages as $pages) {
