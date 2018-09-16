@@ -665,7 +665,7 @@ INSERT INTO `settings` (`id`, `fieldName`, `fieldValue`) VALUES
 (35, 'attendanceOnMarksheet', '0'),
 (36, 'layoutColorUserChange', '0'),
 (37, 'siteLogo', 'text'),
-(38, 'siteLogoAdditional', 'Faculdade DEV'),
+(38, 'siteLogoAdditional', 'DEV College'),
 (39, 'allowPublicReg', '1'),
 (40, 'invoiceGenStudentCreated', '1'),
 (41, 'invoiceGenStudentPromotion', '1'),
