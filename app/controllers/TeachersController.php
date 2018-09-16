@@ -54,7 +54,7 @@ class TeachersController extends \BaseController {
 
 	public function export(){
 		if($this->data['users']->role != "admin") exit;
-		$data = array(1 => array ( 'Nome completo','Nome de usuario','E-mail','Genero','Endereco','Telefone','Celular','Nascimento','Senha'));
+		$data = array(1 => array ( 'Full name','Username','E-mail','Gender','Address','Telephone','Cell phone','Birth','Password'));
 		$student = User::where('role','teacher')->get();
 		foreach ($student as $value) {
 			$birthday = "";
@@ -72,7 +72,7 @@ class TeachersController extends \BaseController {
 
 	public function exportpdf(){
 		if($this->data['users']->role != "admin") exit;
-		$header = array ('Nome completo','Nome de usuario','E-mail','Genero','Endereco','Telefone','Celular');
+		$header = array ('Full name','Username','E-mail','Gender','Address','Telephone','Cell phone');
 		$data = array();
 		$student = User::where('role','teacher')->get();
 		foreach ($student as $value) {

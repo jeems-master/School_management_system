@@ -138,7 +138,7 @@
         <modal visible="showModalLink" style="color:#000;">
           <div class="row">
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="searchLink" placeholder="nome do estudante / nome de usuario / email">
+                <input type="text" class="form-control" id="searchLink" placeholder="nome do estudante / Username / email">
               </div>
               <div class="col-sm-2">
                 <a type="button" ng-click="linkStudentButton()" class="btn btn-danger btn-flat">Pesquisar</a>

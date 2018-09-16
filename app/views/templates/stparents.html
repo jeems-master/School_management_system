@@ -200,7 +200,7 @@
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">{{phrase.studentDetails}}</label>
           <div class="col-sm-10">
-            <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Vincular estudantes</a>
+            <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Link students</a>
             <input type="text" name="linkedStudentsSer" ng-model="form.studentInfoSer" style="display:none;">
             <div class="row" ng-repeat="studentOne in form.studentInfo track by $index">
               <div class="col-xs-4"><input type="text" class="form-control" disabled="disabled" name="studentP[]" ng-model="studentOne.student"></div>
@@ -312,7 +312,7 @@
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">{{phrase.studentDetails}}</label>
           <div class="col-sm-10">
-            <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Vincular estudantes</a>
+            <a type="button" ng-click="linkStudent()" class="btn btn-danger btn-flat">Link students</a>
             <input type="text" name="linkedStudentsSer" ng-model="form.studentInfoSer" style="display:none;">
             <div class="row" ng-repeat="studentOne in form.studentInfo track by $index">
               <div class="col-xs-4"><input type="text" class="form-control" disabled="disabled" ng-model="studentOne.student"></div>
@@ -422,7 +422,7 @@
 <modal visible="showModalLink">
   <div class="row">
       <div class="col-sm-9">
-        <input type="text" class="form-control" id="searchLink" placeholder="Nome do aluno / nome de usuario / email">
+        <input type="text" class="form-control" id="searchLink" placeholder="Nome do aluno / Username / email">
       </div>
       <div class="col-sm-2">
         <a type="button" ng-click="linkStudentButton()" class="btn btn-danger btn-flat">{{phrase.Search}}</a>
