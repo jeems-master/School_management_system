@@ -54,7 +54,7 @@ Route::group(array('before'=>'api.csrf'),function(){
     Route::get('/licenseInstaller','LicenseController@index');
     Route::post('/licenseInstaller','LicenseController@proceed');
 
-    Route::get('/onlineExams/{id}/start', 'OnlineExamsController@start');
+    Route::get('/onlineExams/{id}/start/{step}', 'OnlineExamsController@start');
 });
 
 // Dashboard

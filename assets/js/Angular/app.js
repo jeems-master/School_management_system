@@ -2880,7 +2880,7 @@ schoex.controller('messagesController', function(dataFactory,$rootScope,$route,$
   }
 });
 
-schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scope,$sce,$filter) {
+schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scope,$sce,$filter,$window) {
   $scope.classes = {};
   $scope.subject = {};
   $scope.onlineexams = {};
@@ -3048,19 +3048,20 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     $scope.form.examQuestion.splice(index,1);
   }
 
-  $scope.take = function(id){
+  $scope.take = function(id, step){
     showHideLoad();
-    dataFactory.httpRequest('onlineExams/take/'+id,'POST',{},{}).then(function(data) {
-      response = apiResponse(data,'add');
-      if(response){
-          $scope.changeView('take');
-          $scope.takeData = data;
-          document.getElementById('onlineExamTimer').start();
-          if(data.timeLeft != 0){
-              $scope.$broadcast('timer-set-countdown', data.timeLeft);
-          }
-      }
-    });
+    $window.open('onlineExams/'+id+'/start/'+step, "persistantWindow", 'location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,height = screen.height, width = screen.width, fullscreen=yes');
+    //dataFactory.httpRequest('onlineExams/take/'+id,'POST',{},{}).then(function(data) {
+    //  response = apiResponse(data,'add');
+    //  if(response){
+    //      $scope.changeView('take');
+    //      $scope.takeData = data;
+    //      document.getElementById('onlineExamTimer').start();
+    //      if(data.timeLeft != 0){
+    //          $scope.$broadcast('timer-set-countdown', data.timeLeft);
+    //      }
+    //  }
+    //});
     showHideLoad(true);
   }
 
@@ -3142,6 +3143,7 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     }
     $scope.views.list = false;
     $scope.views.add = false;
+    $scope.views.addCategory = false;
     $scope.views.edit = false;
     $scope.views.take = false;
     $scope.views.marks = false;

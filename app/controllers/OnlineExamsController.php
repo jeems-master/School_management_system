@@ -427,11 +427,12 @@ class OnlineExamsController extends \BaseController {
 		exit;
 	}
 
-    public function start($id){
+    public function start($id, $step){
         $exam = online_exams::find($id);
         $data = array();
         $data['examinee'] = $this->data['users']->fullName;
         $data['exam'] = $exam;
+        $data["step"] = $step+1;
         return View::make('exam', $data);
     }
 }

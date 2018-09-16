@@ -6,7 +6,8 @@
 
 
 <section class="content" ng-show="views.list">
-  <a ng-if="userRole == 'admin' || userRole == 'teacher'" ng-click="changeView('add')" class="floatRTL btn btn-success btn-flat pull-right marginBottom15">{{phrase.addExam}}</a>
+    <a ng-if="userRole == 'admin' || userRole == 'teacher'" ng-click="changeView('add')" class="floatRTL btn btn-success btn-flat pull-right marginBottom15">{{phrase.addExam}}</a>
+    <a ng-if="userRole == 'admin' || userRole == 'teacher'" ng-click="changeView('addCategory')" class="floatRTL btn btn-success btn-flat pull-right marginBottom15 marginleftright20">{{phrase.addExamCategory}}</a>
   <div class="box col-xs-12">
       <div class="box-header">
           <h3 class="box-title">{{phrase.listExams}}</h3>
@@ -18,80 +19,84 @@
           </div>
       </div>
       <div class="box-body table-responsive">
-          <div class="panel-group" id="accordion1">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseOne1">
-                              <i class="fa fa-plus-circle"></i> Exam Category -1
-                          </a>
-                      </h4>
-                  </div>
-                  <div id="collapseOne1" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                          <div class="row collapse in" id="collapse37" style="height: auto; font-family: 'Open Sans', sans-serif;">
-                              <div class="col-md-1"></div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">1</p>
-                                  <p><small><i>started</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Continue </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">2</p>
-                                  <p><small><i>started</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Continue </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">3</p>
-                                  <p><small><i>started</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Continue </a></div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">4</p>
-                                  <p><small><i>started</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Continue </a></div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">5</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block btnwrap" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Start Timed </a>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block btnwrap" ng-click="take('1')"><i class="fa fa-flag-o" aria-hidden="true"></i> Start Untimed </a>
+          <div ng-if="userRole == 'student'">
+              <div class="panel-group" id="accordion1">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseOne1">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -1
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                              <div class="row collapse in" id="collapse37" style="height: auto; font-family: 'Open Sans', sans-serif;">
+                                  <div class="col-md-1"></div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">1</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">2</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">3</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">4</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">5</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="panel-group" id="accordion2">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion2" data-target="#collapseOne2">
-                              <i class="fa fa-plus"></i> Exam Category -2
-                          </a>
-                      </h4>
+              <div class="panel-group" id="accordion2">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion2" data-target="#collapseOne2">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -2
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne2" class="panel-collapse collapse out">
+                          <div class="panel-body">
+                              ...
+                          </div>
+                      </div>
                   </div>
-                  <div id="collapseOne2" class="panel-collapse collapse out">
-                      <div class="panel-body">
-                          ...
+              </div>
+              <div class="panel-group" id="accordion3">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion3" data-target="#collapseOne3">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -3
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne3" class="panel-collapse collapse out">
+                          <div class="panel-body">
+                              ...
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="panel-group" id="accordion3">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion3" data-target="#collapseOne3">
-                              <i class="fa fa-plus"></i> Exam Category -3
-                          </a>
-                      </h4>
-                  </div>
-                  <div id="collapseOne3" class="panel-collapse collapse out">
-                      <div class="panel-body">
-                          ...
-                      </div>
-                  </div>
-              </div>
-          </div>
+          <div ng-if="userRole == 'admin' || userRole == 'teacher'">
           <table class="table table-hover">
               <tbody><tr>
                   <th>{{phrase.ID}}</th>
@@ -113,7 +118,9 @@
                   </td>
               </tr>
               <tr ng-show="!onlineexams.length"><td class="noTableData" colspan="5">{{phrase.noExams}}</td></tr>
-          </tbody></table>
+            </tbody>
+          </table>
+          </div>
       </div>
   </div>
 </section>
@@ -399,6 +406,30 @@
       </form>
     </div>
   </div>
+</section>
+
+<section class="content" ng-show="views.addCategory">
+    <a ng-click="changeView('list')" class="floatRTL btn btn-danger btn-flat pull-right marginBottom15">{{phrase.cancelAdd}}</a>
+    <div class="box col-xs-12">
+        <div class="box-header">
+            <h3 class="box-title">{{phrase.addExamCategory}}</h3>
+        </div>
+        <div class="box-body table-responsive">
+            <form class="form-horizontal" name="addExam" role="form" ng-submit="saveAdd()" novalidate>
+                <div class="form-group" ng-class="{'has-error': addExam.examTitle.$invalid}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{phrase.examCategoryName}} * </label>
+                    <div class="col-sm-10">
+                        <input type="text" name="examTitle" ng-model="form.examTitle" class="form-control" required placeholder="{{phrase.examCategoryName}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" ng-disabled="addExam.$invalid">{{phrase.addExamCategory}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
 
 <section class="content" ng-show="views.edit">
