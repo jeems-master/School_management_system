@@ -420,6 +420,7 @@ class ComposerStaticInit8330da4b10959ad00d87eb39a5e71469
         'newsboard' => __DIR__ . '/../..' . '/app/models/newsboard.php',
         'online_exams' => __DIR__ . '/../..' . '/app/models/online_exams.php',
         'online_exams_grades' => __DIR__ . '/../..' . '/app/models/online_exams_grades.php',
+        'online_exams_passages' => __DIR__ . '/../..' . '/app/models/online_exams_passages.php',
         'payments' => __DIR__ . '/../..' . '/app/models/payments.php',
         'phpmailerException' => __DIR__ . '/../..' . '/app/libraries/class.phpmailer.php',
         'polls' => __DIR__ . '/../..' . '/app/models/polls.php',

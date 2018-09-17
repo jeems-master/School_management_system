@@ -435,4 +435,13 @@ class OnlineExamsController extends \BaseController {
         $data["step"] = $step+1;
         return View::make('exam', $data);
     }
+
+    public function getPassagesByExamId($id){
+        $data = array();
+        $exam = online_exams::find($id);
+        $data['exam'] = json_decode($exam);
+        $passages = online_exams_passages::where('examId', $id)->get();
+        $data['passages'] = json_decode($passages);
+        return $data;
+    }
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2018 at 02:57 AM
+-- Generation Time: Sep 17, 2018 at 06:21 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -573,6 +573,25 @@ INSERT INTO `online_exams_grades` (`id`, `examId`, `studentId`, `examQuestionsAn
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `online_exams_passages`
+--
+
+CREATE TABLE `online_exams_passages` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `examId` int(11) NOT NULL,
+  `content` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `online_exams_passages`
+--
+
+INSERT INTO `online_exams_passages` (`id`, `examId`, `content`) VALUES
+(1, 1, 'This is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payments`
 --
 
@@ -664,7 +683,7 @@ INSERT INTO `settings` (`id`, `fieldName`, `fieldValue`) VALUES
 (34, 'officialVacationDay', '[]'),
 (35, 'attendanceOnMarksheet', '0'),
 (36, 'layoutColorUserChange', '0'),
-(37, 'siteLogo', 'text'),
+(37, 'siteLogo', 'image'),
 (38, 'siteLogoAdditional', 'Faculdade DEV'),
 (39, 'allowPublicReg', '1'),
 (40, 'invoiceGenStudentCreated', '1'),
@@ -822,10 +841,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_token`, `fullName`, `role`, `activated`, `studentRollId`, `auth_session`, `birthday`, `gender`, `address`, `phoneNo`, `mobileNo`, `studentAcademicYear`, `studentClass`, `studentSection`, `parentProfession`, `parentOf`, `photo`, `isLeaderBoard`, `restoreUniqId`, `transport`, `hostel`, `medical`, `defLang`, `defTheme`, `customPermissionsType`, `customPermissions`) VALUES
 (1, 'rafael', 'teste@teste.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', 'jei0Gl6767LoTJ5jx1uOpbyShgR19LvyuYGGeif0WNsLcqscBKVj5x0pamu0', 'Rafael Furtado', 'admin', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, 0, NULL, NULL, NULL, NULL, '', NULL, NULL, '', 0, NULL, 'full', 'null'),
-(5, 'admin', 'admin@test.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', 'Y7aPqTvQSaSGEBVmOaUA5b5oBVjfIcSnrjsX2CEIf8DFB7zg4JXUp5A8YAO5', 'ADMIN', 'admin', 1, NULL, NULL, 381715200, 'male', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 'profile_5.jpg', NULL, NULL, NULL, NULL, '', 0, NULL, 'custom', '["classSch","Attendance","staffAttendance","mediaCenter","teachers","students","parents","gradeLevels","studyMaterial","Assignments","examsList","onlineExams","newsboard","events","classes","Subjects","Reports","academicyears","Promotion","mailsms","Polls"]'),
+(5, 'admin', 'admin@test.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', 'gulkKabGRv2YjYNhwyM9cbSbVAKSJM6kPSxdzlNEMgMoUsr1I1bOf1nnOJgK', 'ADMIN', 'admin', 1, NULL, NULL, 381715200, 'male', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 'profile_5.jpg', NULL, NULL, NULL, NULL, '', 0, NULL, 'custom', '["classSch","Attendance","staffAttendance","mediaCenter","teachers","students","parents","gradeLevels","studyMaterial","Assignments","examsList","onlineExams","newsboard","events","classes","Subjects","Reports","academicyears","Promotion","mailsms","Polls"]'),
 (46, 'professor1', 'professor1@teste', '$2y$10$1fnxniXJGIj18f4HX2CRee.R5xA3pY5neF1cIt/1HoZAdQvrmjOie', 'ojb1suBFjvYNxQRFEByfpao0AY1TG6qGohueWoh0is9rtcMGLf8Lx7aa8a0j', 'Professor 1', 'teacher', 1, NULL, NULL, 0, 'masculino', '', '', '', NULL, 0, 0, NULL, NULL, NULL, '', NULL, 0, NULL, '', 0, NULL, NULL, NULL),
 (47, 'teste', 'sss@ss', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', NULL, 'samuel', 'student', 1, '', NULL, 0, NULL, '', '', '', 2, 1, 0, NULL, NULL, NULL, '', NULL, 0, 0, '', 0, NULL, NULL, NULL),
-(48, 'student', 'student@test.com', '$2y$10$TFdHr0wgwvGhdMlXAovR9OS32dUrKo.JpqzjOeATmnsWorPw9Kp2a', 'bkfTFQ1ps6Bmk3ic0NoIT4EN7QAshU9ilByeyKaBJAAMB31wxVyaeNqd0roM', 'student', 'student', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, 2, 1, 0, NULL, '[]', NULL, NULL, NULL, NULL, NULL, '', 0, NULL, NULL, NULL);
+(48, 'student', 'student@test.com', '$2y$10$TFdHr0wgwvGhdMlXAovR9OS32dUrKo.JpqzjOeATmnsWorPw9Kp2a', 'MnjHkIY33z9LllVjZeCug8N7nWKhDI7QByaU3m7En8TUq5Tv08BrYY1PNLZe', 'student', 'student', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, 2, 1, 0, NULL, '[]', NULL, NULL, NULL, NULL, NULL, '', 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1013,6 +1032,12 @@ ALTER TABLE `online_exams`
 -- Indexes for table `online_exams_grades`
 --
 ALTER TABLE `online_exams_grades`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `online_exams_passages`
+--
+ALTER TABLE `online_exams_passages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1232,6 +1257,11 @@ ALTER TABLE `online_exams`
 --
 ALTER TABLE `online_exams_grades`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `online_exams_passages`
+--
+ALTER TABLE `online_exams_passages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `payments`
 --

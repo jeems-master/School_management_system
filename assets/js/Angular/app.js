@@ -2892,6 +2892,8 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
   $scope.takeData = {};
   $scope.form.examQuestion = [];
   $scope.userRole ;
+  $scope.passages = {};
+  $scope.exam;
 
   $scope.showModal = false;
   $scope.studentProfile = function(id){
@@ -2958,6 +2960,16 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
       $scope.form.ExamEndDate = $filter('date')($scope.form.ExamEndDate * 1000, $rootScope.angDateFormat);
       showHideLoad(true);
     });
+  }
+
+  $scope.passage = function(id){
+      showHideLoad();
+      dataFactory.httpRequest('onlineExams/'+id+'/passages').then(function(data) {
+          $scope.changeView('passage');
+          $scope.passages = data.passages;
+          $scope.exam = data.exam;
+          showHideLoad(true);
+      });
   }
 
   $scope.saveEdit = function(){
@@ -3147,6 +3159,8 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     $scope.views.edit = false;
     $scope.views.take = false;
     $scope.views.marks = false;
+    $scope.views.passage = false;
+    $scope.views.addPassage = false;
     $scope.views[view] = true;
   }
 });

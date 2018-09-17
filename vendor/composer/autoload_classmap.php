@@ -219,6 +219,7 @@ return array(
     'newsboard' => $baseDir . '/app/models/newsboard.php',
     'online_exams' => $baseDir . '/app/models/online_exams.php',
     'online_exams_grades' => $baseDir . '/app/models/online_exams_grades.php',
+    'online_exams_passages' => $baseDir . '/app/models/online_exams_passages.php',
     'payments' => $baseDir . '/app/models/payments.php',
     'phpmailerException' => $baseDir . '/app/libraries/class.phpmailer.php',
     'polls' => $baseDir . '/app/models/polls.php',
