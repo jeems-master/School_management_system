@@ -683,13 +683,8 @@ INSERT INTO `settings` (`id`, `fieldName`, `fieldValue`) VALUES
 (34, 'officialVacationDay', '[]'),
 (35, 'attendanceOnMarksheet', '0'),
 (36, 'layoutColorUserChange', '0'),
-<<<<<<< HEAD
-(37, 'siteLogo', 'image'),
-(38, 'siteLogoAdditional', 'Faculdade DEV'),
-=======
 (37, 'siteLogo', 'text'),
-(38, 'siteLogoAdditional', 'DEV College'),
->>>>>>> eaa2c64248826966f95673376e5274a43b575577
+(38, 'siteLogoAdditional', 'Kyo Standard'),
 (39, 'allowPublicReg', '1'),
 (40, 'invoiceGenStudentCreated', '1'),
 (41, 'invoiceGenStudentPromotion', '1'),
