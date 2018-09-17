@@ -683,7 +683,7 @@ INSERT INTO `settings` (`id`, `fieldName`, `fieldValue`) VALUES
 (34, 'officialVacationDay', '[]'),
 (35, 'attendanceOnMarksheet', '0'),
 (36, 'layoutColorUserChange', '0'),
-(37, 'siteLogo', 'text'),
+(37, 'siteLogo', 'image'),
 (38, 'siteLogoAdditional', 'Kyo Standard'),
 (39, 'allowPublicReg', '1'),
 (40, 'invoiceGenStudentCreated', '1'),
