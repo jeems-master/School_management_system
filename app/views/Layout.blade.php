@@ -41,11 +41,11 @@
           <span class="logo-lg">
               <?php
               if($panelInit->settingsArray['siteLogo'] == "siteName"){
-                  echo "<img src='".URL::asset('assets/img/logo.png')."'/>";
+                echo $panelInit->settingsArray['siteTitle'];
               }elseif($panelInit->settingsArray['siteLogo'] == "text"){
-                  echo $panelInit->settingsArray['siteLogoAdditional'];
+                echo $panelInit->settingsArray['siteLogoAdditional'];
               }elseif($panelInit->settingsArray['siteLogo'] == "image"){
-                  echo $panelInit->settingsArray['siteTitle'];
+                echo "<img src='".URL::asset('assets/img/logo_small.png')."'/>";
               }
               ?>
           </span>
