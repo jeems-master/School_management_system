@@ -105,7 +105,7 @@
                     <img src="{{URL::to('/dashboard/profileImage/'.$users['id'])}}" style="width:90px; height:90px;" class="img-circle" alt="{{$users['fullName']}}">
                     <p>
                       {{$users['fullName']}}
-                      <small>Usuario : {{$users['username']}}</small>
+                      <small>User : {{$users['username']}}</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
