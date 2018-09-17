@@ -58,7 +58,7 @@ class ParentsController extends \BaseController {
 
 	public function export(){
 		if($this->data['users']->role != "admin") exit;
-		$data = array(1 => array ( 'Nome completo','Nome de usuario','E-mail','Genero','Endereco','Telefone','Celular','Nascimento','Profissao','Senha','ParentOf'));
+		$data = array(1 => array ( 'Full name','Username','E-mail','Gender','Address','telephone','Cell phone','Birth','Profession','Password','ParentOf'));
 		$student = User::where('role','parent')->get();
 		foreach ($student as $value) {
 			$parentOf = json_decode($value->parentOf,true);
@@ -91,7 +91,7 @@ class ParentsController extends \BaseController {
 
 	public function exportpdf(){
 		if($this->data['users']->role != "admin") exit;
-		$header = array ('Nome completo','Nome de usuario','E-mail','Genero','Endereco','Telefone','Celular');
+		$header = array ('Full name','Username','E-mail','Gender','Address','Telephone','Cell phone');
 		$data = array();
 		$student = User::where('role','parent')->get();
 		foreach ($student as $value) {

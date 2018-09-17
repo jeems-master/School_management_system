@@ -299,7 +299,7 @@ class StudentsController extends \BaseController {
 			$sectionsArray[$section->id] = $section->sectionName;
 		}
 
-		$data = array(1 => array ('Matricula', 'Nome completo','Nome de usuario','E-mail','Genero','Endereco','Telefone','Celular','Nascimento','Curso','Turma','Senha'));
+		$data = array(1 => array ('Enrollment', 'Full name','Username','E-mail','Gender','Address','Telephone','Cell phone','Birth','Course','Turma','Password'));
 		$student = User::where('role','student')->get();
 		foreach ($student as $value) {
 			$birthday = "";
@@ -311,7 +311,7 @@ class StudentsController extends \BaseController {
 
 		$xls = new Excel_XML('UTF-8', false, 'Payments Sheet');
 		$xls->addArray($data);
-		$xls->generateXML('Estudantes');
+		$xls->generateXML('Students');
 		exit;
 	}
 
@@ -323,7 +323,7 @@ class StudentsController extends \BaseController {
 			$classArray[$class->id] = $class->className;
 		}
 
-		$header = array ('Nome completo','Nome de usuario','E-mail','Genero','Endereco','Celular','Curso');
+		$header = array ('Full name','Username','E-mail','Gender','Address','Cell phone','Course');
 		$data = array();
 		$student = User::where('role','student')->get();
 		foreach ($student as $value) {
@@ -955,7 +955,7 @@ class StudentsController extends \BaseController {
 		        </tr>
 		    </table>
 
-			
+
 
             <table cellspacing=\"0\" cellpadding=\"4\" border=\"1\">
                 <tbody><tr>
@@ -1087,7 +1087,7 @@ class StudentsController extends \BaseController {
 					</td>
 			        </tr>
 			    </table>
-		            
+
 				";
 
 				if(isset($studentMarks[Input::get('examId')]['data'] )){

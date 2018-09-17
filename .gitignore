@@ -1,2 +1,4 @@
-/app/storage
+app/storage/
+
 .env
+.DS_Store

@@ -88,7 +88,7 @@
                   <?php } ?>
 
                   <div class="form-group">
-                      <input type="text" name="birthday" class="form-control datemask" placeholder="<?php echo $panelInit->language['Birthday']; ?> (25/12/1979)" ng-model="form.birthday"/>
+                      <input type="text" name="birthday" class="form-control datemask" placeholder="<?php echo $panelInit->language['Birthday']; ?> (12/25/1979)" ng-model="form.birthday"/>
                   </div>
                   <div class="form-group">
                       <div class="row">
@@ -100,11 +100,11 @@
                       <input type="text" name="address" class="form-control" placeholder="<?php echo $panelInit->language['Address']; ?>" ng-model="form.address"/>
                   </div>
                   <div class="form-group">
-                      <input type="number" name="phoneNo" class="form-control" placeholder="Telefone fixo" ng-model="form.phoneNo"/>
+                      <input type="number" name="phoneNo" class="form-control" placeholder="Wireline" ng-model="form.phoneNo"/>
 					  <!--<input type="text" name="phoneNo" class="form-control" placeholder="<?php echo $panelInit->language['phoneNo']; ?>" ng-model="form.phoneNo"/>-->
                   </div>
                   <div class="form-group" ng-class="{'has-error': registerationForm.mobileNo.$invalid}">
-                      <input type="text" name="mobileNo" class="form-control" placeholder="Celular com DDD" ng-model="form.mobileNo"/>
+                      <input type="text" name="mobileNo" class="form-control" placeholder="Mobile with DDD" ng-model="form.mobileNo"/>
 					  <!--<input type="text" mobile-number name="mobileNo" class="form-control" placeholder="<?php echo $panelInit->language['mobileNo']; ?>" ng-model="form.mobileNo"/>-->
                   </div>
                   <div class="form-group" ng-show="form.role == 'parent'">
@@ -138,7 +138,7 @@
         <modal visible="showModalLink" style="color:#000;">
           <div class="row">
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="searchLink" placeholder="nome do estudante / nome de usuario / email">
+                <input type="text" class="form-control" id="searchLink" placeholder="nome do estudante / Username / email">
               </div>
               <div class="col-sm-2">
                 <a type="button" ng-click="linkStudentButton()" class="btn btn-danger btn-flat">Pesquisar</a>
