@@ -2939,6 +2939,7 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
 
   $scope.saveAdd = function(){
     showHideLoad();
+      console.log($scope.form);
     dataFactory.httpRequest('onlineExams','POST',{},$scope.form).then(function(data) {
       response = apiResponse(data,'add');
       if(data.status == "success"){
@@ -2947,6 +2948,20 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
       }
       showHideLoad(true);
     });
+  }
+
+  $scope.saveAddPassage = function(){
+      showHideLoad();
+      console.log($scope.form);
+      dataFactory.httpRequest('onlineExams/passage','POST',{},$scope.form).then(function(data) {
+          console.log(data);
+          response = apiResponse(data,'add');
+          if(data.status == "success"){
+              $scope.passages.push(response);
+              $scope.changeView('passage');
+          }
+          showHideLoad(true);
+      });
   }
 
   $scope.edit = function(id){

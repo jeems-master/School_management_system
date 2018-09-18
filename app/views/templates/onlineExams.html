@@ -18,82 +18,85 @@
           </div>
       </div>
       <div class="box-body table-responsive">
-          <div class="panel-group" id="accordion1">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseOne1">
-                              <i class="fa fa-plus-circle"></i> Exam Category -1
-                          </a>
-                      </h4>
-                  </div>
-                  <div id="collapseOne1" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                          <div class="row collapse in" id="collapse37" style="height: auto; font-family: 'Open Sans', sans-serif;">
-                              <div class="col-md-1"></div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">1</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">2</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">3</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">4</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
-                              </div>
-                              <div class="col-md-2 color2 textattemptbox">
-                                  <p class="boxNumber">5</p>
-                                  <p><small><i>not attempted</i></small></p>
-                                  <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+          <div ng-if="userRole == 'student'">
+              <div class="panel-group" id="accordion1">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseOne1">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -1
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                              <div class="row collapse in" id="collapse37" style="height: auto; font-family: 'Open Sans', sans-serif;">
+                                  <div class="col-md-1"></div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">1</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">2</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">3</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">4</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
+                                  <div class="col-md-2 color2 textattemptbox">
+                                      <p class="boxNumber">5</p>
+                                      <p><small><i>not attempted</i></small></p>
+                                      <a class="no-lr-pad btn btn-default btn-sm btn-block" ng-click="take(1,0)"><i class="fa fa-flag-o" aria-hidden="true"></i> Start </a>
+                                  </div>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="panel-group" id="accordion2">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion2" data-target="#collapseOne2">
-                              <i class="fa fa-plus-circle"></i> Exam Category -2
-                          </a>
-                      </h4>
+              <div class="panel-group" id="accordion2">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion2" data-target="#collapseOne2">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -2
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne2" class="panel-collapse collapse out">
+                          <div class="panel-body">
+                              ...
+                          </div>
+                      </div>
                   </div>
-                  <div id="collapseOne2" class="panel-collapse collapse out">
-                      <div class="panel-body">
-                          ...
+              </div>
+              <div class="panel-group" id="accordion3">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <a href="javascript:;" data-toggle="collapse" data-parent="#accordion3" data-target="#collapseOne3">
+                                  <i class="fa fa-plus-circle"></i> Exam Category -3
+                              </a>
+                          </h4>
+                      </div>
+                      <div id="collapseOne3" class="panel-collapse collapse out">
+                          <div class="panel-body">
+                              ...
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="panel-group" id="accordion3">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a href="javascript:;" data-toggle="collapse" data-parent="#accordion3" data-target="#collapseOne3">
-                              <i class="fa fa-plus-circle"></i> Exam Category -3
-                          </a>
-                      </h4>
-                  </div>
-                  <div id="collapseOne3" class="panel-collapse collapse out">
-                      <div class="panel-body">
-                          ...
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <table class="table table-hover" ng-hide="true">
+          <div ng-if="userRole == 'admin' || userRole == 'teacher'">
+            <table class="table table-hover">
               <tbody><tr>
                   <th>{{phrase.ID}}</th>
                   <th>{{phrase.examName}}</th>
@@ -116,6 +119,7 @@
               </tr>
               <tr ng-show="!onlineexams.length"><td class="noTableData" colspan="5">{{phrase.noExams}}</td></tr>
           </tbody></table>
+          </div>
       </div>
   </div>
 </section>
@@ -164,11 +168,12 @@
             <h3 class="box-title">Add passage</h3>
         </div>
         <div class="box-body table-responsive">
-            <form class="form-horizontal" name="addExam" role="form" ng-submit="saveAdd()" novalidate>
-                <div class="form-group">
+            <form class="form-horizontal" name="addPassage" role="form" ng-submit="saveAddPassage()" novalidate>
+                <input type="hidden" value="{{exam.id}}" name="examId" ng-model="form.examId"/>
+                <div class="form-group" ng-class="{'has-error': addPassage.passageContent.$invalid}">
                     <label for="inputPassword3" class="col-sm-2 control-label">Passage content</label>
                     <div class="col-sm-10">
-                        <textarea name="examDescription" class="form-control" ng-model="form.examDescription" placeholder="Passage content" rows="10"></textarea>
+                        <textarea name="passageContent" class="form-control" ng-model="form.passageContent" placeholder="Passage content" rows="10"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -371,7 +376,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" ng-disabled="addExam.$invalid">Add passage</button>
+                        <button type="submit" class="btn btn-default" ng-disabled="addPassage.$invalid">Add passage</button>
                     </div>
                 </div>
             </form>
@@ -450,210 +455,6 @@
           <label for="inputEmail3" class="col-sm-2 control-label">{{phrase.Extras}}</label>
           <div class="col-sm-10">
             <input type="checkbox" ng-model="form.ExamShowGrade" value="1" ng-checked="form.ExamShowGrade == '1'"> {{phrase.showExamGradesAfter}}
-          </div>
-        </div>
-        <div class="form-group">
-            <label for="examPassage" class="col-sm-2 control-label">Passage</label>
-            <div class="col-sm-10">
-                <textarea name="examPassage" required class="form-control"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">{{phrase.Questions}}</label>
-          <div class="col-sm-10">
-              <div class="box-body table-responsive">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.Question}}</label>
-                  <div class="col-sm-11">
-                    <input type="text" name="examTitle" ng-model="examTitle" class="form-control" placeholder="{{phrase.Question}}">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.questionMark}}</label>
-                  <div class="col-sm-11">
-                    <input type="text" name="questionMark" ng-model="questionMark" class="form-control" placeholder="Pontuacao da questao">
-                    {{phrase.emptyOneMark}}
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.questionType}}</label>
-                  <div class="col-sm-11">
-                    <select class="form-control" id="examQType" ng-model="examQType">
-                      <option value="radio">{{phrase.oneOption}}</option>
-                      <option value="check">{{phrase.multipleOption}}</option>
-                      <option value="text">{{phrase.textValue}}</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group" ng-show="examQType == 'radio'">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.Answers}} </label>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans1" ng-model="ans1" class="form-control" placeholder="Questao 1">
-                    <input type="radio" name="optionsRadios" value="1" ng-model="Tans"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans2" ng-model="ans2" class="form-control" placeholder="Questao 2">
-                    <input type="radio" name="optionsRadios" value="2" ng-model="Tans"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans3" ng-model="ans3" class="form-control" placeholder="Questao 3">
-                    <input type="radio" name="optionsRadios" value="3" ng-model="Tans"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans4" ng-model="ans4" class="form-control" placeholder="Questao 4">
-                    <input type="radio" name="optionsRadios" value="4" ng-model="Tans"> {{phrase.trueAns}}
-                  </div>
-                  <a ng-click="addQuestion()" class="col-sm-3 btn btn-danger btn-flat pull-right marginBottom15">{{phrase.addQuestion}}</a>
-                </div>
-                <div class="form-group" ng-show="examQType == 'check'">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.Answers}} </label>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans1" ng-model="ans1" class="form-control" placeholder="Questao 1">
-                    <input type="checkbox" name="optionsRadios" value="1" ng-model="Tans1"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans2" ng-model="ans2" class="form-control" placeholder="Questao 2">
-                    <input type="checkbox" name="optionsRadios" value="2" ng-model="Tans2"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans3" ng-model="ans3" class="form-control" placeholder="Questao 3">
-                    <input type="checkbox" name="optionsRadios" value="3" ng-model="Tans3"> {{phrase.trueAns}}
-                  </div>
-                  <div class="col-sm-2">
-                    <input type="text" name="ans4" ng-model="ans4" class="form-control" placeholder="Questao 4">
-                    <input type="checkbox" name="optionsRadios" value="4" ng-model="Tans4"> {{phrase.trueAns}}
-                  </div>
-                  <a ng-click="addQuestion()" class="col-sm-3 btn btn-danger btn-flat pull-right marginBottom15">{{phrase.addQuestion}}</a>
-                </div>
-                <div class="form-group" ng-show="examQType == 'text'">
-                  <label for="inputEmail3" class="col-sm-1 control-label">{{phrase.Answers}} </label>
-                  <div class="col-sm-8">
-                      <input type="text" name="ans1" ng-model="ans1" class="form-control" placeholder="Adicione respostas verdadeiras separadas por virgula">
-                  </div>
-                  <a ng-click="addQuestion()" class="col-sm-3 btn btn-danger btn-flat pull-right marginBottom15">{{phrase.addQuestion}}</a>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-4" ng-repeat="question in form.examQuestion">
-                  <div class="box box-info" ng-show="!question.type || question.type == 'radio'">
-                    <div class="box-header">
-                        <h3 class="box-title">{{phrase.infoBox}}</h3>
-                        <div class="box-tools pull-right">
-                          <a href="" ng-click="removeQuestion(question,$index)" class="label bg-aqua">{{phrase.Remove}}</a>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                      <div class="form-group" ng-class="{'has-error': addExam.AssignTitle.$invalid}">
-                        <label class="col-sm-12">{{phrase.Question}}</label>
-                        <div class="col-sm-12"> {{question.title}} </div>
-                      </div>
-                      <div class="form-group" ng-class="{'has-error': addExam.AssignTitle.$invalid}">
-                        <label class="col-sm-12">Mark</label>
-                        <div class="col-sm-12"> {{question.questionMark}} </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.questionType}}</label>
-                        <div class="col-sm-12">{{phrase.oneOption}}</div>
-                      </div>
-                      <div class="form-group" ng-class="{'has-error': addExam.AssignTitle.$invalid}">
-                        <label class="col-sm-12">{{phrase.Answers}} </label>
-                        <div class="col-sm-12">
-                        {{question.ans1}} <span ng-show="question.Tans == '1'"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans2}} <span ng-show="question.Tans == '2'"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans3}} <span ng-show="question.Tans == '3'"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans4}} <span ng-show="question.Tans == '4'"> [{{phrase.trueAns}}]</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Image}} </label>
-                        <div class="col-sm-12">
-                            <a colorbox="{transition:'elastic'}" ng-href="{{'uploads/onlineExams/'+question.image}}" ng-show="question.image">{{phrase.viewImage}}<br/></a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="question.image">{{phrase.chgImage}}</a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="!question.image">{{phrase.uplImage}}</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box box-info" ng-show="question.type == 'check'">
-                    <div class="box-header">
-                        <h3 class="box-title">{{phrase.infoBox}}</h3>
-                        <div class="box-tools pull-right">
-                          <a href="" ng-click="removeQuestion(question,$index)" class="label bg-aqua">{{phrase.Remove}}</a>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Question}}</label>
-                        <div class="col-sm-12"> {{question.title}} </div>
-                      </div>
-                      <div class="form-group" ng-class="{'has-error': addExam.AssignTitle.$invalid}">
-                        <label class="col-sm-12">Mark</label>
-                        <div class="col-sm-12"> {{question.questionMark}} </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.questionType}}</label>
-                        <div class="col-sm-12"> {{phrase.multipleOption}} </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Answers}} </label>
-                        <div class="col-sm-12">
-                        {{question.ans1}} <span ng-show="question.Tans1"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans2}} <span ng-show="question.Tans2"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans3}} <span ng-show="question.Tans3"> [{{phrase.trueAns}}]</span><br/>
-                        {{question.ans4}} <span ng-show="question.Tans4"> [{{phrase.trueAns}}]</span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Image}} </label>
-                        <div class="col-sm-12">
-                            <a colorbox="{transition:'elastic'}" ng-href="{{'uploads/onlineExams/'+question.image}}" ng-show="question.image">{{phrase.viewImage}}<br/></a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="question.image">{{phrase.chgImage}}</a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="!question.image">{{phrase.uplImage}}</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="box box-info" ng-show="question.type == 'text'">
-                    <div class="box-header">
-                        <h3 class="box-title">{{phrase.infoBox}}</h3>
-                        <div class="box-tools pull-right">
-                          <a href="" ng-click="removeQuestion(question,$index)" class="label bg-aqua">{{phrase.Remove}}</a>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Question}}</label>
-                        <div class="col-sm-12"> {{question.title}} </div>
-                      </div>
-                      <div class="form-group" ng-class="{'has-error': addExam.AssignTitle.$invalid}">
-                        <label class="col-sm-12">Mark</label>
-                        <div class="col-sm-12"> {{question.questionMark}} </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.questionType}}</label>
-                        <div class="col-sm-12"> {{phrase.textValue}} </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Answers}} </label>
-                        <div class="col-sm-12">
-                        {{question.ans1}}
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="col-sm-12">{{phrase.Image}} </label>
-                        <div class="col-sm-12">
-                            <a colorbox="{transition:'elastic'}" ng-href="{{'uploads/onlineExams/'+question.image}}" ng-show="question.image">{{phrase.viewImage}}<br/></a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="question.image">{{phrase.chgImage}}</a>
-                            <a href="" ng-click="uploadQimage($index,question)" ng-show="!question.image">{{phrase.uplImage}}</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
           </div>
         </div>
         <div class="form-group">

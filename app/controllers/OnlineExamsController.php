@@ -444,4 +444,16 @@ class OnlineExamsController extends \BaseController {
         $data['passages'] = json_decode($passages);
         return $data;
     }
+
+    public function createPassage(){
+        return "dddd";
+        if($this->data['users']->role == "student" || $this->data['users']->role == "parent") exit;
+        return $this->panelInit->apiOutput(true,"Add passage","Passage has been created.",[]);
+        $passage = new online_exams_passages();
+        $passage->examId = Input::get('examId');
+        $passage->content = Input::get('passageContent');
+        $passage->save();
+
+        return $this->panelInit->apiOutput(true,"Add passage","Passage has been created.",$passage->toArray() );
+    }
 }
