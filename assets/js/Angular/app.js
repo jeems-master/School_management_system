@@ -2937,9 +2937,22 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     }
   }
 
+  $scope.removePassage = function(item, index){
+      var confirmRemove = confirm($rootScope.phrase.sureRemove);
+      if (confirmRemove == true) {
+          showHideLoad();
+          dataFactory.httpRequest('onlineExamsPassage/delete/'+item.id,'POST').then(function(data) {
+              response = apiResponse(data,'remove');
+              if(data.status == "success"){
+                  $scope.passages.splice(index,1);
+              }
+              showHideLoad(true);
+          });
+      }
+  }
+
   $scope.saveAdd = function(){
     showHideLoad();
-      console.log($scope.form);
     dataFactory.httpRequest('onlineExams','POST',{},$scope.form).then(function(data) {
       response = apiResponse(data,'add');
       if(data.status == "success"){
@@ -2952,8 +2965,7 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
 
   $scope.saveAddPassage = function(){
       showHideLoad();
-      console.log($scope.form);
-      dataFactory.httpRequest('onlineExams/passage','POST',{},$scope.form).then(function(data) {
+      dataFactory.httpRequest('onlineExamsPassage','POST',{},$scope.form).then(function(data) {
           console.log(data);
           response = apiResponse(data,'add');
           if(data.status == "success"){
@@ -2977,6 +2989,15 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     });
   }
 
+  $scope.editPassages = function(id){
+      showHideLoad();
+      dataFactory.httpRequest('onlineExamsPassage/'+id).then(function(data) {
+          $scope.changeView('editPassage');
+          $scope.form = data;
+          showHideLoad(true);
+      });
+  }
+
   $scope.passage = function(id){
       showHideLoad();
       dataFactory.httpRequest('onlineExams/'+id+'/passages').then(function(data) {
@@ -2989,7 +3010,6 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
 
   $scope.saveEdit = function(){
     showHideLoad();
-    console.log($scope.form);
     dataFactory.httpRequest('onlineExams/'+$scope.form.id,'POST',{},$scope.form).then(function(data) {
       response = apiResponse(data,'edit');
       if(data.status == "success"){
@@ -2998,6 +3018,19 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
       }
       showHideLoad(true);
     });
+  }
+
+  $scope.saveEditPassage = function(){
+      showHideLoad();
+      console.log($scope.form);
+      dataFactory.httpRequest('onlineExamsPassage/'+$scope.form.id,'POST',{},$scope.form).then(function(data) {
+          response = apiResponse(data,'edit');
+          if(data.status == "success"){
+              $scope.passages = apiModifyTable($scope.passages,response.id,response);
+              $scope.changeView('passage');
+          }
+          showHideLoad(true);
+      });
   }
 
   $scope.addQuestion = function(){
@@ -3164,7 +3197,7 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
   }
 
   $scope.changeView = function(view){
-    if(view == "add" || view == "list" || view == "show"){
+    if(view == "add" || view == "list" || view == "show" || view == "addPassage" || view == "passage"){
       $scope.form = {};
       $scope.form.examQuestion = [];
     }
@@ -3176,6 +3209,7 @@ schoex.controller('onlineExamsController', function(dataFactory,$rootScope,$scop
     $scope.views.marks = false;
     $scope.views.passage = false;
     $scope.views.addPassage = false;
+    $scope.views.editPassage = false;
     $scope.views[view] = true;
   }
 });

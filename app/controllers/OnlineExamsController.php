@@ -160,11 +160,11 @@ class OnlineExamsController extends \BaseController {
 
 	function edit($id){
 		if($this->data['users']->role == "student" || $this->data['users']->role == "parent") exit;
-		$onlineExams = online_exams::find($id);
-		$onlineExams->examTitle = Input::get('examTitle');
-		$onlineExams->examDescription = Input::get('examDescription');
-		$onlineExams->examClass = json_encode(Input::get('examClass'));
-		if($this->panelInit->settingsArray['enableSections'] == true){
+        $onlineExams = online_exams::find($id);
+        $onlineExams->examTitle = Input::get('examTitle');
+        $onlineExams->examDescription = Input::get('examDescription');
+        $onlineExams->examClass = json_encode(Input::get('examClass'));
+        if($this->panelInit->settingsArray['enableSections'] == true){
 			$onlineExams->sectionId = json_encode(Input::get('sectionId'));
 		}
 		$onlineExams->examTeacher = $this->data['users']->id;
@@ -446,14 +446,41 @@ class OnlineExamsController extends \BaseController {
     }
 
     public function createPassage(){
-        return "dddd";
         if($this->data['users']->role == "student" || $this->data['users']->role == "parent") exit;
-        return $this->panelInit->apiOutput(true,"Add passage","Passage has been created.",[]);
         $passage = new online_exams_passages();
         $passage->examId = Input::get('examId');
-        $passage->content = Input::get('passageContent');
+        $passage->passageContent = Input::get('passageContent');
+        $passage->examQuestion = json_encode(Input::get('examQuestion'));
         $passage->save();
 
         return $this->panelInit->apiOutput(true,"Add passage","Passage has been created.",$passage->toArray() );
+    }
+
+    public function fetchPassage($id){
+        $passage = online_exams_passages::where('id',$id)->first()->toArray();
+        $passage['examQuestion'] = json_decode($passage['examQuestion']);
+        return $passage;
+    }
+
+    public function editPassage($id){
+        if($this->data['users']->role == "student" || $this->data['users']->role == "parent") exit;
+        $passage = online_exams_passages::find($id);
+        $passage->examId = Input::get('examId');
+        $passage->passageContent = Input::get('passageContent');
+        $passage->examQuestion = json_encode(Input::get('examQuestion'));
+        $passage->save();
+
+        return $this->panelInit->apiOutput(true,"Edit passage","Passage has been updated.",$passage->toArray() );
+    }
+
+    public function deletePassage($id){
+        if($this->data['users']->role == "student" || $this->data['users']->role == "parent") exit;
+        if ( $postDelete = online_exams_passages::where('id', $id)->first() )
+        {
+            $postDelete->delete();
+            return $this->panelInit->apiOutput(true,"Delete passage","Passage deleted successfully");
+        }else{
+            return $this->panelInit->apiOutput(false,"Delete passage",$this->panelInit->language['exNotExist']);
+        }
     }
 }

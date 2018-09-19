@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2018 at 06:21 AM
+-- Generation Time: Sep 19, 2018 at 02:44 AM
 -- Server version: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -500,7 +500,9 @@ CREATE TABLE `mob_notifications` (
 
 INSERT INTO `mob_notifications` (`id`, `notifTo`, `notifToIds`, `notifData`, `notifDate`, `notifSender`) VALUES
 (1, 'students', '1', 'New Online exam added exam1', 1536924055, 'Automated'),
-(2, 'students', '1', 'New Online exam added exam2', 1536930927, 'Automated');
+(2, 'students', '1', 'New Online exam added exam2', 1536930927, 'Automated'),
+(3, 'students', '1', 'New Online exam added exam3', 1537258234, 'Automated'),
+(4, 'students', '1', 'New Online exam added exam3', 1537324790, 'Automated');
 
 -- --------------------------------------------------------
 
@@ -579,15 +581,18 @@ INSERT INTO `online_exams_grades` (`id`, `examId`, `studentId`, `examQuestionsAn
 CREATE TABLE `online_exams_passages` (
   `id` int(10) UNSIGNED NOT NULL,
   `examId` int(11) NOT NULL,
-  `content` text NOT NULL
+  `passageContent` text NOT NULL,
+  `examQuestion` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `online_exams_passages`
 --
 
-INSERT INTO `online_exams_passages` (`id`, `examId`, `content`) VALUES
-(1, 1, 'This is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.\r\nThis is passage test.');
+INSERT INTO `online_exams_passages` (`id`, `examId`, `passageContent`, `examQuestion`) VALUES
+(1, 1, 'The best-known hypersaline lakes are located in hydrologically isolated environments, in which water inflow is in equilibrium with evaporation. Examples include the Dead Sea (DS) in the Middle East and the Great Salt Lake (GSL) in Utah. Salt concentrations in the DS are greatest in the southern section and approach saturation (Figure 1a). Salt concentrations in the GSL range from levels similar to ocean water up to saturation.', '"[{\\"title\\":\\"question1\\",\\"type\\":\\"radio\\",\\"ans1\\":\\"an1\\",\\"ans2\\":\\"AN2\\",\\"ans3\\":\\"an3\\",\\"ans4\\":\\"an4\\",\\"Tans\\":\\"2\\",\\"questionMark\\":\\"4\\"},{\\"title\\":\\"ques2\\",\\"type\\":\\"radio\\",\\"ans1\\":\\"an1\\",\\"ans2\\":\\"an2\\",\\"ans3\\":\\"an3\\",\\"ans4\\":\\"an4\\",\\"Tans\\":\\"3\\",\\"questionMark\\":\\"3\\"}]"'),
+(4, 1, 'Swimming in salty water is a significantly different experience than swimming in fresh water. The average human body has a slightly greater density (1.01 kg/L) than fresh water, and people must usually swim to stay afloat in a body of fresh water (e.g. Lake Michigan). However, adding salt to water increases the density of the liquid, resulting in an increase in buoyant force. The salt also affects other properties, including colligative properties, such as reductions of vapor pressure (Figure 1b), melting point, and solubility of gases.', '[{"title":"If a person drank a large quantity of hypersaline ocean water, the person could die because absorption of salt into the blood will cause it to become:","type":"radio","ans1":"hypotonic compared with the cytosol of the body\\u2019s cells, causing osmosis of water into the cells.","ans2":"hypertonic compared with the cytosol of the body\\u2019s cells, causing osmosis of water into the cells.","ans3":"hypotonic compared with the cytosol of the body\\u2019s cells, causing osmosis of water out of the cells.","ans4":"hypertonic compared with the cytosol of the body\\u2019s cells, causing osmosis of water out of the cells.","Tans":"3","questionMark":"4"},{"title":"Based on Figure 1, adding salt to water causes the boiling point of the water to:","type":"radio","ans1":"increase, requiring a greater average kinetic energy of the liquid to produce a vapor pressure equal to the external pressure.","ans2":"increase, requiring a greater average kinetic energy of the liquid to produce a vapor pressure that is greater than the external pressure.","ans3":"decrease, requiring a lower average kinetic energy of the liquid to produce a vapor pressure equal to the external pressure.","ans4":"decrease, requiring a lower average kinetic energy of the liquid to produce a vapor pressure that is less than the external pressure.","Tans":"3"}]'),
+(3, 2, 'Hypersaline bodies of water tend to be fairly sterile, containing only highly adapted forms of life. Brine shrimp are the most notable aquatic life form in the GSL. These shrimp feed on algae by mastication, using mandibles to create a bolus, which, after injection into the mouth, travels down the equivalent of an esophagus to the stomach. The shrimp ingest a lot of salt during this process, which is excreted through the branchia. In addition, anaerobic halophiles can be found, namely fermentative, sulfate-reducing, homoacetogenic, phototrophic, and methanogenic bacteria.', '[]');
 
 -- --------------------------------------------------------
 
@@ -841,10 +846,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_token`, `fullName`, `role`, `activated`, `studentRollId`, `auth_session`, `birthday`, `gender`, `address`, `phoneNo`, `mobileNo`, `studentAcademicYear`, `studentClass`, `studentSection`, `parentProfession`, `parentOf`, `photo`, `isLeaderBoard`, `restoreUniqId`, `transport`, `hostel`, `medical`, `defLang`, `defTheme`, `customPermissionsType`, `customPermissions`) VALUES
 (1, 'rafael', 'teste@teste.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', 'jei0Gl6767LoTJ5jx1uOpbyShgR19LvyuYGGeif0WNsLcqscBKVj5x0pamu0', 'Rafael Furtado', 'admin', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, -1, 0, NULL, NULL, NULL, NULL, '', NULL, NULL, '', 0, NULL, 'full', 'null'),
-(5, 'admin', 'admin@test.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', 'gulkKabGRv2YjYNhwyM9cbSbVAKSJM6kPSxdzlNEMgMoUsr1I1bOf1nnOJgK', 'ADMIN', 'admin', 1, NULL, NULL, 381715200, 'male', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 'profile_5.jpg', NULL, NULL, NULL, NULL, '', 0, NULL, 'custom', '["classSch","Attendance","staffAttendance","mediaCenter","teachers","students","parents","gradeLevels","studyMaterial","Assignments","examsList","onlineExams","newsboard","events","classes","Subjects","Reports","academicyears","Promotion","mailsms","Polls"]'),
+(5, 'admin', 'admin@test.com', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', '2yvJITmyrM4y0gylIPBanpD6wd9KfByYhADXmF3nusGlMew4UvCxBmMNcFb3', 'ADMIN', 'admin', 1, NULL, NULL, 381715200, 'male', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, 'profile_5.jpg', NULL, NULL, NULL, NULL, '', 0, NULL, 'custom', '["classSch","Attendance","staffAttendance","mediaCenter","teachers","students","parents","gradeLevels","studyMaterial","Assignments","examsList","onlineExams","newsboard","events","classes","Subjects","Reports","academicyears","Promotion","mailsms","Polls"]'),
 (46, 'professor1', 'professor1@teste', '$2y$10$1fnxniXJGIj18f4HX2CRee.R5xA3pY5neF1cIt/1HoZAdQvrmjOie', 'ojb1suBFjvYNxQRFEByfpao0AY1TG6qGohueWoh0is9rtcMGLf8Lx7aa8a0j', 'Professor 1', 'teacher', 1, NULL, NULL, 0, 'masculino', '', '', '', NULL, 0, 0, NULL, NULL, NULL, '', NULL, 0, NULL, '', 0, NULL, NULL, NULL),
 (47, 'teste', 'sss@ss', '$2y$10$tEpPbsmXGRznlBtvO.ABmePJOxJuBm.FeYc0L4hGMaXTQadkH6ZrK', NULL, 'samuel', 'student', 1, '', NULL, 0, NULL, '', '', '', 2, 1, 0, NULL, NULL, NULL, '', NULL, 0, 0, '', 0, NULL, NULL, NULL),
-(48, 'student', 'student@test.com', '$2y$10$TFdHr0wgwvGhdMlXAovR9OS32dUrKo.JpqzjOeATmnsWorPw9Kp2a', 'MnjHkIY33z9LllVjZeCug8N7nWKhDI7QByaU3m7En8TUq5Tv08BrYY1PNLZe', 'student', 'student', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, 2, 1, 0, NULL, '[]', NULL, NULL, NULL, NULL, NULL, '', 0, NULL, NULL, NULL);
+(48, 'student', 'student@test.com', '$2y$10$TFdHr0wgwvGhdMlXAovR9OS32dUrKo.JpqzjOeATmnsWorPw9Kp2a', 'gD7VLaFVfhznwRunapnkW2ufuLgAn9uAxeEEeKmg9foz5GnY7QoEv8tGXCV3', 'student', 'student', 1, NULL, NULL, 0, NULL, NULL, NULL, NULL, 2, 1, 0, NULL, '[]', NULL, NULL, NULL, NULL, NULL, '', 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1241,7 +1246,7 @@ ALTER TABLE `messages_list`
 -- AUTO_INCREMENT for table `mob_notifications`
 --
 ALTER TABLE `mob_notifications`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `newsboard`
 --
@@ -1251,7 +1256,7 @@ ALTER TABLE `newsboard`
 -- AUTO_INCREMENT for table `online_exams`
 --
 ALTER TABLE `online_exams`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `online_exams_grades`
 --
@@ -1261,7 +1266,7 @@ ALTER TABLE `online_exams_grades`
 -- AUTO_INCREMENT for table `online_exams_passages`
 --
 ALTER TABLE `online_exams_passages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `payments`
 --

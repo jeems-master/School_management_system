@@ -331,7 +331,11 @@ Route::group(array('prefix'=>'/','before'=>'auth.Ui|auth.token|api.csrf'),functi
 	Route::post('/onlineExams/{id}','OnlineExamsController@edit');
 
     Route::get('/onlineExams/{id}/passages', 'OnlineExamsController@getPassagesByExamId');
-    Route::post('/onlineExams/passage','OnlineExamsController@createPassage');
+    Route::post('/onlineExamsPassage','OnlineExamsController@createPassage');
+    Route::get('/onlineExamsPassage/{id}','OnlineExamsController@fetchPassage');
+    Route::post('/onlineExamsPassage/{id}','OnlineExamsController@editPassage');
+    Route::post('/onlineExamsPassage/delete/{id}','OnlineExamsController@deletePassage');
+
 	//Transportation
 	Route::get('/transports','DashboardController@index');
 	Route::get('/transports/listAll','TransportsController@listAll');
